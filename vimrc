@@ -34,6 +34,10 @@ highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
 filetype plugin indent on
 
+" NERDTree
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+nmap <F6> :NERDTreeToggle<CR>
 
 " show existing tab with 4 spaces width
 set tabstop=4
